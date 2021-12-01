@@ -1,7 +1,8 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <a class="navbar-brand" href="/">
             <img src="/img/logo.png" width="25vh" alt="" class="my-auto mb-1" />
+            VacaSean
         </a>
         <button
             class="navbar-toggler"
@@ -19,28 +20,28 @@
                 <li class="nav-item ms-2">
                     <a
                         class="nav-link {{ Request::is('/') ? 'active' : ''}}"
-                        href="/"
-                        >Vac.Sean</a
+                        href="/home"
+                        >Home</a
                     >
                 </li>
                 <li class="nav-item ms-2">
                     <a
-                        class="nav-link {{ Request::is('posts*') ? 'active' : ''}} ? 'active' : ''"
-                        href="/posts"
+                        class="nav-link {{ Request::is('places*') ? 'active' : ''}} ? 'active' : ''"
+                        href="/places"
                         >Place</a
                     >
                 </li>
                 <li class="nav-item ms-2">
                     <a
-                        class="nav-link {{ Request::is('posts*') ? 'active' : ''}} ? 'active' : ''"
-                        href="/posts"
+                        class="nav-link {{ Request::is('stories*') ? 'active' : ''}} ? 'active' : ''"
+                        href="/stories"
                         >Stories</a
                     >
                 </li>
                 <li class="nav-item ms-2">
                     <a
-                        class="nav-link {{ Request::is('categories') ? 'active' : ''}}"
-                        href="/categories"
+                        class="nav-link {{ Request::is('country') ? 'active' : ''}}"
+                        href="/country"
                         >Country</a
                     >
                 </li>
