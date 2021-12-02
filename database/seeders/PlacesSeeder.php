@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Places;
 use Illuminate\Database\Seeder;
 
 class PlacesSeeder extends Seeder
@@ -14,5 +15,6 @@ class PlacesSeeder extends Seeder
     public function run()
     {
         //
+        Places::factory(20)->create();
     }
 }

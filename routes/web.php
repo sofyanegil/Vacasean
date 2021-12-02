@@ -21,6 +21,12 @@ Route::get('/home', function () {
     return view('home');
 });
 
+
 Route::get('/countries', function () {
     return view('countries');
+});.
+
+Route::get('/about', function () {
+    return view('about');
 });
+
