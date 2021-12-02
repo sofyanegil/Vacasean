@@ -16,10 +16,10 @@ class CreatePlacesTable extends Migration
         Schema::create('places', function (Blueprint $table) {
             $table->id();
             $table->foreignId('country_id');
-            $table->string('city')->unique();
+            $table->string('city');
             $table->string('name')->unique();
             $table->string('image')->nullable();
-            $table->string('about');
+            $table->text('about');
             $table->string('bujur');
             $table->string('lintang');
             $table->string('slug')->unique();
