@@ -24,17 +24,21 @@
 @extends('layouts.main') @section('main')
 <div class="about-section">
     <div class="inner-container">
-        <h1>About Us</h1>
-        <p class="text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iure
-            amet non repellendus quia fuga eius! Ipsa soluta, vitae incidunt
-            corporis ea deleniti fugiat, alias animi qui nulla natus ullam?
-        </p>
-        <div class="skills">
-            <span>Web Design</span>
-            <span>Photo</span>
-            <span>Coding</span>
-        </div>
+      <h1>About Us</h1>
+      <h5>Selamat Datang di VacaSean!!!</h5>
+      <p class="text">
+        Hallo sobat Vacasean semua, apa kabar hari ini ? Semoga selalu sehat dalam perlindungan-Nya.
+      </p>
+      <p class="text">
+        Website VacaSean ini kami buat dengan sengaja untuk menyediakan informasi dan menjadi referensi anda untuk mencari ide liburan di wilayah ASEAN.
+      <p class="text">
+        Harapan kami, dengan adanya website ini bisa membantu anda mencari lokasi wisata yang ingin anda kunjungi bersama keluarga atau orang-orang tercinta.
+      </p>
+      <div class="skills">
+        <span>Place</span>
+        <span>Countries</span>
+        <span>Stories</span>
+      </div>
     </div>
 </div>
 @endsection
