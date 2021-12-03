@@ -15,7 +15,10 @@ class PlacesController extends Controller
      */
     public function index()
     {
-        //
+        return view('places', [
+            "title" => "Places",
+            "places" => Places::all()
+        ]);
     }
 
     /**
