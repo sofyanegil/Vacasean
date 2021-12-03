@@ -40,8 +40,8 @@
                 </li>
                 <li class="nav-item ms-2">
                     <a
-                        class="nav-link {{ Request::is('country') ? 'active' : ''}}"
-                        href="/country"
+                        class="nav-link {{ Request::is('countries*') ? 'active' : ''}}"
+                        href="/countries"
                         >Country</a
                     >
                 </li>

@@ -1,29 +1,28 @@
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    font-family: "Open sans", sans-serif;
-    box-sizing: border-box;
-  }
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: "Open sans", sans-serif;
+        box-sizing: border-box;
+    }
 
-  .about-section {
-    background: url(img/dlwlrma.jpg) no-repeat left;
-    background-size: 55%;
-    background-color: #fdfdfd;
-    overflow: hidden;
-    padding: 100px 0;
-  }
+    .about-section {
+        background: url(img/dlwlrma.jpg) no-repeat left;
+        background-size: 55%;
+        background-color: #fdfdfd;
+        overflow: hidden;
+        padding: 100px 0;
+    }
 
-  .inner-container {
-    width: 55%;
-    float: right;
-    background-color: #fdfdfd;
-    padding: 150px;
-  }
+    .inner-container {
+        width: 55%;
+        float: right;
+        background-color: #fdfdfd;
+        padding: 150px;
+    }
 </style>
-@extends('layouts.main') 
-@section('main')
-  <div class="about-section">
+@extends('layouts.main') @section('main')
+<div class="about-section">
     <div class="inner-container">
       <h1>About Us</h1>
       <h5>Selamat Datang di VacaSean!!!</h5>
@@ -41,5 +40,5 @@
         <span>Stories</span>
       </div>
     </div>
-  </div>
+</div>
 @endsection

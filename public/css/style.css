@@ -5,4 +5,5 @@ body {
     overflow-x: hidden;
     font-family: "Poppins", sans-serif;
     min-height: 100vh;
+    scroll-behavior: smooth;
 }
