@@ -1,6 +1,6 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand" href="/" style="font-weight: 800">
             <img src="/img/logo.png" width="25vh" alt="" class="my-auto mb-1" />
             VacaSean
         </a>
@@ -20,7 +20,7 @@
                 <li class="nav-item ms-2">
                     <a
                         class="nav-link {{ Request::is('/') ? 'active' : ''}}"
-                        href="/home"
+                        href="/"
                         >Home</a
                     >
                 </li>
@@ -28,7 +28,7 @@
                     <a
                         class="nav-link {{ Request::is('places*') ? 'active' : ''}} ? 'active' : ''"
                         href="/places"
-                        >Place</a
+                        >Places</a
                     >
                 </li>
                 <li class="nav-item ms-2">
@@ -42,7 +42,7 @@
                     <a
                         class="nav-link {{ Request::is('countries*') ? 'active' : ''}}"
                         href="/countries"
-                        >Country</a
+                        >Countries</a
                     >
                 </li>
                 <li class="nav-item ms-2">

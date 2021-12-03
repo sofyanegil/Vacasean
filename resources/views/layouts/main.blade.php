@@ -25,7 +25,7 @@
         <link rel="stylesheet" href="/css/style.css" />
         <link rel="shortcut icon" href="/img/logo.png" />
 
-        <title>VacaSean |</title>
+        <title>VacaSean | {{ $title }}</title>
     </head>
     <body>
         @include('partials.navbar')

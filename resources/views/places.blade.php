@@ -78,6 +78,7 @@
         </div>
     </div>
 
+    <!-- Row Indonesia -->
     <div class="row mt-4" id="indonesia">
         <h4 class="mb-3">
             <img
@@ -102,59 +103,37 @@
                 alt="Indonesia"
             />
         </h4>
-        <div class="col-md-3 mb-3">
-            <div class="card" style="width: 18rem">
+        @foreach ($places as $place) @if ($place->country->name_country ==
+        "Indonesia")
+        <div class="col-md-3 mb-4">
+            <div class="card shadow">
+                <div
+                    class="position-absolute px-1 py-1 text-white"
+                    style="background-color: rgba(0, 0, 0, 0.5)"
+                >
+                    <small class="text-warning">{{ $place->bujur }}</small>
+                    <br />
+                    <small class="text-light">{{ $place->lintang }}</small>
+                </div>
                 <img
-                    src="img/lalalalisa_m.jpg"
+                    src="https://www.planetware.com/wpimages/2019/10/southeast-asia-best-places-to-visit-bangkok-thailand.jpg"
                     class="card-img-top"
                     alt="..."
                 />
-                <div class="card-body">
-                    <h4 class="card-text">Monas</h4>
-                    <p>Jakarta, Indonesia</p>
+                <div class="card-body bg-light">
+                    <h4 class="card-text">{{ $place->name }}</h4>
+                    <p>
+                        {{ $place->city }}, {{ $place->country->name_country }}
+                    </p>
+                    <a href="/" class="btn btn-success w-100">
+                        <i class="bi-compass"></i> Explore Now!
+                    </a>
                 </div>
             </div>
         </div>
-        <div class="col-md-3 mb-3">
-            <div class="card" style="width: 18rem">
-                <img
-                    src="img/lalalalisa_m.jpg"
-                    class="card-img-top"
-                    alt="..."
-                />
-                <div class="card-body">
-                    <h4 class="card-text">Monas</h4>
-                    <p>Jakarta, Indonesia</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 mb-3">
-            <div class="card" style="width: 18rem">
-                <img
-                    src="img/lalalalisa_m.jpg"
-                    class="card-img-top"
-                    alt="..."
-                />
-                <div class="card-body">
-                    <h4 class="card-text">Monas</h4>
-                    <p>Jakarta, Indonesia</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 mb-3">
-            <div class="card" style="width: 18rem">
-                <img
-                    src="img/lalalalisa_m.jpg"
-                    class="card-img-top"
-                    alt="..."
-                />
-                <div class="card-body">
-                    <h4 class="card-text">Monas</h4>
-                    <p>Jakarta, Indonesia</p>
-                </div>
-            </div>
-        </div>
+        @endif @endforeach
     </div>
+    <!-- Row Filiphina -->
     <div class="row mt-3" id="filipina">
         <h4 class="mb-2">
             <img
@@ -179,20 +158,37 @@
                 alt="Filipina"
             />
         </h4>
-        <div class="col-md-3 mb-3">
-            <div class="card" style="width: 18rem">
+        @foreach ($places as $place) @if ($place->country->name_country ==
+        "Filipina")
+        <div class="col-md-3 mb-4">
+            <div class="card shadow">
+                <div
+                    class="position-absolute px-1 py-1 text-white"
+                    style="background-color: rgba(0, 0, 0, 0.5)"
+                >
+                    <small class="text-warning">{{ $place->bujur }}</small>
+                    <br />
+                    <small class="text-light">{{ $place->lintang }}</small>
+                </div>
                 <img
-                    src="img/lalalalisa_m.jpg"
+                    src="https://www.planetware.com/wpimages/2019/10/southeast-asia-best-places-to-visit-bangkok-thailand.jpg"
                     class="card-img-top"
                     alt="..."
                 />
-                <div class="card-body">
-                    <h4 class="card-text">Monas</h4>
-                    <p>Jakarta, Indonesia</p>
+                <div class="card-body bg-light">
+                    <h4 class="card-text">{{ $place->name }}</h4>
+                    <p>
+                        {{ $place->city }}, {{ $place->country->name_country }}
+                    </p>
+                    <a href="/" class="btn btn-success w-100">
+                        <i class="bi-compass"></i> Explore Now!
+                    </a>
                 </div>
             </div>
         </div>
+        @endif @endforeach
     </div>
+    <!-- Row Thailand -->
     <div class="row mt-3" id="thailand">
         <h4 class="mb-2">
             <img
@@ -217,20 +213,37 @@
                 alt="Thailand"
             />
         </h4>
-        <div class="col-md-3 mb-3">
-            <div class="card" style="width: 18rem">
+        @foreach ($places as $place) @if ($place->country->name_country ==
+        "Thailand")
+        <div class="col-md-3 mb-4">
+            <div class="card shadow">
+                <div
+                    class="position-absolute px-1 py-1 text-white"
+                    style="background-color: rgba(0, 0, 0, 0.5)"
+                >
+                    <small class="text-warning">{{ $place->bujur }}</small>
+                    <br />
+                    <small class="text-light">{{ $place->lintang }}</small>
+                </div>
                 <img
-                    src="img/lalalalisa_m.jpg"
+                    src="https://www.planetware.com/wpimages/2019/10/southeast-asia-best-places-to-visit-bangkok-thailand.jpg"
                     class="card-img-top"
                     alt="..."
                 />
-                <div class="card-body">
-                    <h4 class="card-text">Monas</h4>
-                    <p>Jakarta, Indonesia</p>
+                <div class="card-body bg-light">
+                    <h4 class="card-text">{{ $place->name }}</h4>
+                    <p>
+                        {{ $place->city }}, {{ $place->country->name_country }}
+                    </p>
+                    <a href="/" class="btn btn-success w-100">
+                        <i class="bi-compass"></i> Explore Now!
+                    </a>
                 </div>
             </div>
         </div>
+        @endif @endforeach
     </div>
+    <!-- Row Malaysia -->
     <div class="row mt-3" id="malaysia">
         <h4 class="mb-2">
             <img
@@ -255,20 +268,37 @@
                 alt="Malaysia"
             />
         </h4>
-        <div class="col-md-3 mb-3">
-            <div class="card" style="width: 18rem">
+        @foreach ($places as $place) @if ($place->country->name_country ==
+        "Malaysia")
+        <div class="col-md-3 mb-4">
+            <div class="card shadow">
+                <div
+                    class="position-absolute px-1 py-1 text-white"
+                    style="background-color: rgba(0, 0, 0, 0.5)"
+                >
+                    <small class="text-warning">{{ $place->bujur }}</small>
+                    <br />
+                    <small class="text-light">{{ $place->lintang }}</small>
+                </div>
                 <img
-                    src="img/lalalalisa_m.jpg"
+                    src="https://www.planetware.com/wpimages/2019/10/southeast-asia-best-places-to-visit-bangkok-thailand.jpg"
                     class="card-img-top"
                     alt="..."
                 />
-                <div class="card-body">
-                    <h4 class="card-text">Monas</h4>
-                    <p>Jakarta, Indonesia</p>
+                <div class="card-body bg-light">
+                    <h4 class="card-text">{{ $place->name }}</h4>
+                    <p>
+                        {{ $place->city }}, {{ $place->country->name_country }}
+                    </p>
+                    <a href="/" class="btn btn-success w-100">
+                        <i class="bi-compass"></i> Explore Now!
+                    </a>
                 </div>
             </div>
         </div>
+        @endif @endforeach
     </div>
+    <!-- Row Singapura -->
     <div class="row mt-3" id="singapura">
         <h4 class="mb-2">
             <img
@@ -293,19 +323,310 @@
                 alt="Singapura"
             />
         </h4>
-        <div class="col-md-3 mb-3">
-            <div class="card" style="width: 18rem">
+        @foreach ($places as $place) @if ($place->country->name_country ==
+        "Singapura")
+        <div class="col-md-3 mb-4">
+            <div class="card shadow">
+                <div
+                    class="position-absolute px-1 py-1 text-white"
+                    style="background-color: rgba(0, 0, 0, 0.5)"
+                >
+                    <small class="text-warning">{{ $place->bujur }}</small>
+                    <br />
+                    <small class="text-light">{{ $place->lintang }}</small>
+                </div>
                 <img
-                    src="img/lalalalisa_m.jpg"
+                    src="https://www.planetware.com/wpimages/2019/10/southeast-asia-best-places-to-visit-bangkok-thailand.jpg"
                     class="card-img-top"
                     alt="..."
                 />
-                <div class="card-body">
-                    <h4 class="card-text">Monas</h4>
-                    <p>Jakarta, Indonesia</p>
+                <div class="card-body bg-light">
+                    <h4 class="card-text">{{ $place->name }}</h4>
+                    <p>
+                        {{ $place->city }}, {{ $place->country->name_country }}
+                    </p>
+                    <a href="/" class="btn btn-success w-100">
+                        <i class="bi-compass"></i> Explore Now!
+                    </a>
                 </div>
             </div>
         </div>
+        @endif @endforeach
+    </div>
+    <!-- Row Vietnam -->
+    <div class="row mt-3" id="vietnam">
+        <h4 class="mb-2">
+            <img
+                src="https://flagcdn.com/24x18/vn.png"
+                srcset="
+                    https://flagcdn.com/48x36/vn.png 2x,
+                    https://flagcdn.com/72x54/vn.png 3x
+                "
+                width="24"
+                height="18"
+                alt="Singapura"
+            />
+            Vietnam
+            <img
+                src="https://flagcdn.com/24x18/vn.png"
+                srcset="
+                    https://flagcdn.com/48x36/vn.png 2x,
+                    https://flagcdn.com/72x54/vn.png 3x
+                "
+                width="24"
+                height="18"
+                alt="Vietnam"
+            />
+        </h4>
+        @foreach ($places as $place) @if ($place->country->name_country ==
+        "Vietnam")
+        <div class="col-md-3 mb-4">
+            <div class="card shadow">
+                <div
+                    class="position-absolute px-1 py-1 text-white"
+                    style="background-color: rgba(0, 0, 0, 0.5)"
+                >
+                    <small class="text-warning">{{ $place->bujur }}</small>
+                    <br />
+                    <small class="text-light">{{ $place->lintang }}</small>
+                </div>
+                <img
+                    src="https://www.planetware.com/wpimages/2019/10/southeast-asia-best-places-to-visit-bangkok-thailand.jpg"
+                    class="card-img-top"
+                    alt="..."
+                />
+                <div class="card-body bg-light">
+                    <h4 class="card-text">{{ $place->name }}</h4>
+                    <p>
+                        {{ $place->city }}, {{ $place->country->name_country }}
+                    </p>
+                    <a href="/" class="btn btn-success w-100">
+                        <i class="bi-compass"></i> Explore Now!
+                    </a>
+                </div>
+            </div>
+        </div>
+        @endif @endforeach
+    </div>
+    <!-- Row Laos -->
+    <div class="row mt-3" id="laos">
+        <h4 class="mb-2">
+            <img
+                src="https://flagcdn.com/24x18/la.png"
+                srcset="
+                    https://flagcdn.com/48x36/la.png 2x,
+                    https://flagcdn.com/72x54/la.png 3x
+                "
+                width="24"
+                height="18"
+                alt="Laos"
+            />
+            Laos
+            <img
+                src="https://flagcdn.com/24x18/la.png"
+                srcset="
+                    https://flagcdn.com/48x36/la.png 2x,
+                    https://flagcdn.com/72x54/la.png 3x
+                "
+                width="24"
+                height="18"
+                alt="Laos"
+            />
+        </h4>
+        @foreach ($places as $place) @if ($place->country->name_country ==
+        "Laos")
+        <div class="col-md-3 mb-4">
+            <div class="card shadow">
+                <div
+                    class="position-absolute px-1 py-1 text-white"
+                    style="background-color: rgba(0, 0, 0, 0.5)"
+                >
+                    <small class="text-warning">{{ $place->bujur }}</small>
+                    <br />
+                    <small class="text-light">{{ $place->lintang }}</small>
+                </div>
+                <img
+                    src="https://www.planetware.com/wpimages/2019/10/southeast-asia-best-places-to-visit-bangkok-thailand.jpg"
+                    class="card-img-top"
+                    alt="..."
+                />
+                <div class="card-body bg-light">
+                    <h4 class="card-text">{{ $place->name }}</h4>
+                    <p>
+                        {{ $place->city }}, {{ $place->country->name_country }}
+                    </p>
+                    <a href="/" class="btn btn-success w-100">
+                        <i class="bi-compass"></i> Explore Now!
+                    </a>
+                </div>
+            </div>
+        </div>
+        @endif @endforeach
+    </div>
+    <!-- Row Kamboja -->
+    <div class="row mt-3" id="kamboja">
+        <h4 class="mb-2">
+            <img
+                src="https://flagcdn.com/24x18/kh.png"
+                srcset="
+                    https://flagcdn.com/48x36/kh.png 2x,
+                    https://flagcdn.com/72x54/kh.png 3x
+                "
+                width="24"
+                height="18"
+                alt="Kamboja"
+            />
+            Kamboja
+            <img
+                src="https://flagcdn.com/24x18/kh.png"
+                srcset="
+                    https://flagcdn.com/48x36/kh.png 2x,
+                    https://flagcdn.com/72x54/kh.png 3x
+                "
+                width="24"
+                height="18"
+                alt="Kamboja"
+            />
+        </h4>
+        @foreach ($places as $place) @if ($place->country->name_country ==
+        "Kamboja")
+        <div class="col-md-3 mb-4">
+            <div class="card shadow">
+                <div
+                    class="position-absolute px-1 py-1 text-white"
+                    style="background-color: rgba(0, 0, 0, 0.5)"
+                >
+                    <small class="text-warning">{{ $place->bujur }}</small>
+                    <br />
+                    <small class="text-light">{{ $place->lintang }}</small>
+                </div>
+                <img
+                    src="https://www.planetware.com/wpimages/2019/10/southeast-asia-best-places-to-visit-bangkok-thailand.jpg"
+                    class="card-img-top"
+                    alt="..."
+                />
+                <div class="card-body bg-light">
+                    <h4 class="card-text">{{ $place->name }}</h4>
+                    <p>
+                        {{ $place->city }}, {{ $place->country->name_country }}
+                    </p>
+                    <a href="/" class="btn btn-success w-100">
+                        <i class="bi-compass"></i> Explore Now!
+                    </a>
+                </div>
+            </div>
+        </div>
+        @endif @endforeach
+    </div>
+    <!-- Row Brunei -->
+    <div class="row mt-3" id="brunei">
+        <h4 class="mb-2">
+            <img
+                src="https://flagcdn.com/24x18/bn.png"
+                srcset="
+                    https://flagcdn.com/48x36/bn.png 2x,
+                    https://flagcdn.com/72x54/bn.png 3x
+                "
+                width="24"
+                height="18"
+                alt="Brunei"
+            />
+            Brunei
+            <img
+                src="https://flagcdn.com/24x18/bn.png"
+                srcset="
+                    https://flagcdn.com/48x36/bn.png 2x,
+                    https://flagcdn.com/72x54/bn.png 3x
+                "
+                width="24"
+                height="18"
+                alt="Brunei"
+            />
+        </h4>
+        @foreach ($places as $place) @if ($place->country->name_country ==
+        "Brunei")
+        <div class="col-md-3 mb-4">
+            <div class="card shadow">
+                <div
+                    class="position-absolute px-1 py-1 text-white"
+                    style="background-color: rgba(0, 0, 0, 0.5)"
+                >
+                    <small class="text-warning">{{ $place->bujur }}</small>
+                    <br />
+                    <small class="text-light">{{ $place->lintang }}</small>
+                </div>
+                <img
+                    src="https://www.planetware.com/wpimages/2019/10/southeast-asia-best-places-to-visit-bangkok-thailand.jpg"
+                    class="card-img-top"
+                    alt="..."
+                />
+                <div class="card-body bg-light">
+                    <h4 class="card-text">{{ $place->name }}</h4>
+                    <p>
+                        {{ $place->city }}, {{ $place->country->name_country }}
+                    </p>
+                    <a href="/" class="btn btn-success w-100">
+                        <i class="bi-compass"></i> Explore Now!
+                    </a>
+                </div>
+            </div>
+        </div>
+        @endif @endforeach
+    </div>
+    <!-- Row Myanmar -->
+    <div class="row mt-3" id="myanmar">
+        <h4 class="mb-2">
+            <img
+                src="https://flagcdn.com/24x18/mm.png"
+                srcset="
+                    https://flagcdn.com/48x36/mm.png 2x,
+                    https://flagcdn.com/72x54/mm.png 3x
+                "
+                width="24"
+                height="18"
+                alt="Myanmar"
+            />
+            Myanmar
+            <img
+                src="https://flagcdn.com/24x18/mm.png"
+                srcset="
+                    https://flagcdn.com/48x36/mm.png 2x,
+                    https://flagcdn.com/72x54/mm.png 3x
+                "
+                width="24"
+                height="18"
+                alt="Myanmar"
+            />
+        </h4>
+        @foreach ($places as $place) @if ($place->country->name_country ==
+        "Myanmar")
+        <div class="col-md-3 mb-4">
+            <div class="card shadow">
+                <div
+                    class="position-absolute px-1 py-1 text-white"
+                    style="background-color: rgba(0, 0, 0, 0.5)"
+                >
+                    <small class="text-warning">{{ $place->bujur }}</small>
+                    <br />
+                    <small class="text-light">{{ $place->lintang }}</small>
+                </div>
+                <img
+                    src="https://www.planetware.com/wpimages/2019/10/southeast-asia-best-places-to-visit-bangkok-thailand.jpg"
+                    class="card-img-top"
+                    alt="..."
+                />
+                <div class="card-body bg-light">
+                    <h4 class="card-text">{{ $place->name }}</h4>
+                    <p>
+                        {{ $place->city }}, {{ $place->country->name_country }}
+                    </p>
+                    <a href="/" class="btn btn-success w-100">
+                        <i class="bi-compass"></i> Explore Now!
+                    </a>
+                </div>
+            </div>
+        </div>
+        @endif @endforeach
     </div>
 </div>
 @endsection

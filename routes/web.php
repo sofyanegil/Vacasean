@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\CountryController;
+use App\Http\Controllers\PlacesController;
 use App\Models\Country;
+use App\Models\Places;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,28 +18,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
-});
-
-Route::get('/home', function () {
-    return view('home');
-});
-
-Route::get('/places', function () {
-    return view('places');
-});
-
-Route::get('/countries', function () {
-    return view('countries', [
-        'title' => 'Countries',
-        'countries' => Country::all()
+    return view('home', [
+        'title' => 'Home',
+        'countries' => Country::all(),
+        'places' => Places::all(),
     ]);
 });
 
+Route::get('/places', [PlacesController::class, 'index']);
+
+Route::get('/countries', [CountryController::class, 'index']);
+
 Route::get('/about', function () {
-    return view('about');
+    return view('about', [
+        "title" => "About",
+    ]);
 });
 
 Route::get('/login', function () {
-    return view('login/index');
+    return view('login/index', [
+        "title" => "Login",
+    ]);
 });
