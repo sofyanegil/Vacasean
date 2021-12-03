@@ -2,7 +2,6 @@
     * {
         margin: 0;
         padding: 0;
-        font-family: "Open sans", sans-serif;
         box-sizing: border-box;
     }
 
@@ -18,7 +17,34 @@
         width: 55%;
         float: right;
         background-color: #fdfdfd;
-        padding: 150px;
+        padding: 100px;
+    }
+
+    .inner-container h1 {
+        text-align: justify;
+    }
+
+    .inner-container h5 {
+        font-size: 20px;
+    }
+
+    .text {
+        text-align: justify;
+        font-size: 13px;
+    }
+
+    @media screen and (max-width:1200px) {
+       .about-section {
+           background-size: 100%;
+           padding: 50px 40px;
+           margin-top: 50px;
+           margin-bottom: 50px;
+       }
+        .inner-container {
+           padding: 10px;
+           width: 100%;
+           font-size: 10px;
+       }
     }
 </style>
 @extends('layouts.main') @section('main')
@@ -26,19 +52,14 @@
     <div class="inner-container">
       <h1>About Us</h1>
       <h5>Selamat Datang di VacaSean!!!</h5>
-      <p class="text">
+        <p class="text">
         Hallo sobat Vacasean semua, apa kabar hari ini ? Semoga selalu sehat dalam perlindungan-Nya.
-      </p>
-      <p class="text">
+        </p>
+        <p class="text">
         Website VacaSean ini kami buat dengan sengaja untuk menyediakan informasi dan menjadi referensi anda untuk mencari ide liburan di wilayah ASEAN.
-      <p class="text">
+        <p class="text">
         Harapan kami, dengan adanya website ini bisa membantu anda mencari lokasi wisata yang ingin anda kunjungi bersama keluarga atau orang-orang tercinta.
       </p>
-      <div class="skills">
-        <span>Place</span>
-        <span>Countries</span>
-        <span>Stories</span>
-      </div>
     </div>
 </div>
 @endsection
