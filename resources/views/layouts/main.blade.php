@@ -23,13 +23,13 @@
 
         <!-- Custom CSS -->
         <link rel="stylesheet" href="/css/style.css" />
-        <link rel="shortcut icon" href="/img/logo.ico" />
+        <link rel="shortcut icon" href="/img/logo.png" />
 
         <title>VacaSean |</title>
     </head>
     <body>
         @include('partials.navbar')
-        <div class="container">@yield('main')</div>
+        <div class="container mt-3">@yield('main')</div>
         @include('partials.footer')
 
         <script
