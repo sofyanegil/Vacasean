@@ -15,7 +15,10 @@ class StoryController extends Controller
      */
     public function index()
     {
-        //
+        return view('stories', [
+            "title" => "Stories",
+            "stories" => Story::latest()->paginate(7)->onEachSide(0)
+        ]);
     }
 
     /**
