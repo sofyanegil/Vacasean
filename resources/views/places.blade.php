@@ -116,9 +116,10 @@
                     <small class="text-light">{{ $place->lintang }}</small>
                 </div>
                 <img
-                    src="https://www.planetware.com/wpimages/2019/10/southeast-asia-best-places-to-visit-bangkok-thailand.jpg"
+                    src="https://source.unsplash.com/600x300?{{ $place->name }}"
+                    style="object-fit: cover"
                     class="card-img-top"
-                    alt="..."
+                    alt="{{ $place->name }}"
                 />
                 <div class="card-body bg-light">
                     <h4 class="card-text">{{ $place->name }}</h4>
@@ -171,9 +172,10 @@
                     <small class="text-light">{{ $place->lintang }}</small>
                 </div>
                 <img
-                    src="https://www.planetware.com/wpimages/2019/10/southeast-asia-best-places-to-visit-bangkok-thailand.jpg"
+                    src="https://source.unsplash.com/600x300?{{ $place->name }}"
+                    style="object-fit: cover"
                     class="card-img-top"
-                    alt="..."
+                    alt="{{ $place->name }}"
                 />
                 <div class="card-body bg-light">
                     <h4 class="card-text">{{ $place->name }}</h4>
@@ -226,9 +228,10 @@
                     <small class="text-light">{{ $place->lintang }}</small>
                 </div>
                 <img
-                    src="https://www.planetware.com/wpimages/2019/10/southeast-asia-best-places-to-visit-bangkok-thailand.jpg"
+                    src="https://source.unsplash.com/600x300?{{ $place->name }}"
+                    style="object-fit: cover"
                     class="card-img-top"
-                    alt="..."
+                    alt="{{ $place->name }}"
                 />
                 <div class="card-body bg-light">
                     <h4 class="card-text">{{ $place->name }}</h4>
@@ -281,9 +284,10 @@
                     <small class="text-light">{{ $place->lintang }}</small>
                 </div>
                 <img
-                    src="https://www.planetware.com/wpimages/2019/10/southeast-asia-best-places-to-visit-bangkok-thailand.jpg"
+                    src="https://source.unsplash.com/600x300?{{ $place->name }}"
+                    style="object-fit: cover"
                     class="card-img-top"
-                    alt="..."
+                    alt="{{ $place->name }}"
                 />
                 <div class="card-body bg-light">
                     <h4 class="card-text">{{ $place->name }}</h4>
@@ -336,9 +340,10 @@
                     <small class="text-light">{{ $place->lintang }}</small>
                 </div>
                 <img
-                    src="https://www.planetware.com/wpimages/2019/10/southeast-asia-best-places-to-visit-bangkok-thailand.jpg"
+                    src="https://source.unsplash.com/600x300?{{ $place->name }}"
+                    style="object-fit: cover"
                     class="card-img-top"
-                    alt="..."
+                    alt="{{ $place->name }}"
                 />
                 <div class="card-body bg-light">
                     <h4 class="card-text">{{ $place->name }}</h4>
@@ -391,9 +396,10 @@
                     <small class="text-light">{{ $place->lintang }}</small>
                 </div>
                 <img
-                    src="https://www.planetware.com/wpimages/2019/10/southeast-asia-best-places-to-visit-bangkok-thailand.jpg"
+                    src="https://source.unsplash.com/600x300?{{ $place->name }}"
+                    style="object-fit: cover"
                     class="card-img-top"
-                    alt="..."
+                    alt="{{ $place->name }}"
                 />
                 <div class="card-body bg-light">
                     <h4 class="card-text">{{ $place->name }}</h4>
@@ -446,9 +452,10 @@
                     <small class="text-light">{{ $place->lintang }}</small>
                 </div>
                 <img
-                    src="https://www.planetware.com/wpimages/2019/10/southeast-asia-best-places-to-visit-bangkok-thailand.jpg"
+                    src="https://source.unsplash.com/600x300?{{ $place->name }}"
+                    style="object-fit: cover"
                     class="card-img-top"
-                    alt="..."
+                    alt="{{ $place->name }}"
                 />
                 <div class="card-body bg-light">
                     <h4 class="card-text">{{ $place->name }}</h4>
@@ -501,9 +508,10 @@
                     <small class="text-light">{{ $place->lintang }}</small>
                 </div>
                 <img
-                    src="https://www.planetware.com/wpimages/2019/10/southeast-asia-best-places-to-visit-bangkok-thailand.jpg"
+                    src="https://source.unsplash.com/600x300?{{ $place->name }}"
+                    style="object-fit: cover"
                     class="card-img-top"
-                    alt="..."
+                    alt="{{ $place->name }}"
                 />
                 <div class="card-body bg-light">
                     <h4 class="card-text">{{ $place->name }}</h4>
@@ -556,9 +564,10 @@
                     <small class="text-light">{{ $place->lintang }}</small>
                 </div>
                 <img
-                    src="https://www.planetware.com/wpimages/2019/10/southeast-asia-best-places-to-visit-bangkok-thailand.jpg"
+                    src="https://source.unsplash.com/600x300?{{ $place->name }}"
+                    style="object-fit: cover"
                     class="card-img-top"
-                    alt="..."
+                    alt="{{ $place->name }}"
                 />
                 <div class="card-body bg-light">
                     <h4 class="card-text">{{ $place->name }}</h4>
@@ -611,9 +620,10 @@
                     <small class="text-light">{{ $place->lintang }}</small>
                 </div>
                 <img
-                    src="https://www.planetware.com/wpimages/2019/10/southeast-asia-best-places-to-visit-bangkok-thailand.jpg"
+                    src="https://source.unsplash.com/600x300?{{ $place->name }}"
+                    style="object-fit: cover"
                     class="card-img-top"
-                    alt="..."
+                    alt="{{ $place->name }}"
                 />
                 <div class="card-body bg-light">
                     <h4 class="card-text">{{ $place->name }}</h4>
