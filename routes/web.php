@@ -40,3 +40,9 @@ Route::get('/login', function () {
         "title" => "Login",
     ]);
 });
+
+Route::get('/register', function () {
+    return view('register/index', [
+        "title" => "Register",
+    ]);
+});
