@@ -27,6 +27,12 @@ Route::get('/', function () {
 
 Route::get('/places', [PlacesController::class, 'index']);
 
+Route::get('/stories', function () {
+    return view('stories', [
+        "title" => "Story",
+    ]);
+});
+
 Route::get('/countries', [CountryController::class, 'index']);
 
 Route::get('/about', function () {
