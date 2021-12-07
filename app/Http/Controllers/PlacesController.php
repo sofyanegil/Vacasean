@@ -17,7 +17,7 @@ class PlacesController extends Controller
     {
         return view('places', [
             "title" => "Places",
-            "places" => Places::all()
+            "places" => Places::latest()->paginate(7)->onEachSide(0)
         ]);
     }
 
