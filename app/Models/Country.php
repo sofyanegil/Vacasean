@@ -11,7 +11,7 @@ class Country extends Model
     use HasFactory;
     protected $guarded = ['id'];
 
-    public function posts()
+    public function places()
     {
         return $this->hasMany(Places::class);
     }
