@@ -13,51 +13,53 @@
                         >
                     </li>
                     <li class="breadcrumb-item">
-                        <a href="" class="text-decoration-none text-dark"
-                            >Place</a
+                        <a
+                            href=""
+                            class="text-decoration-none text-dark"
+                            >{{ $story->places->name }}</a
                         >
                     </li>
                     <li class="breadcrumb-item active" aria-current="page">
-                        Title
+                        {!! Str::limit($story->title, 20, "..")!!}
                     </li>
                 </ol>
             </nav>
         </div>
-        <div class="col-md-8 bg-light">
-            <h1 class="mb-3">Ini Title</h1>
+        <div class="col-md-8">
+            <h1 class="mb-3">{{ $story->title }}</h1>
 
             <p>
-                <span class="text-muted"> By. </span
-                ><a href="#" class="text-decoration-none">Nama Penulis</a>
+                <span class="text-muted"> By. </span>
+                {{ $story->author->name }}
                 <span class="text-muted">in</span>
-                <a href="#" class="text-decoration-none"
-                    >Nama Kota, Nama Negara</a
-                ><span class="text-muted"> 5 days ago</span>
+                <small
+                    >{{ $story->places->name }},
+                    {{ $story->places->country->name_country }}</small
+                ><span class="text-muted">
+                    {{ $story->created_at->diffForHumans() }}</span
+                >
             </p>
 
-            <div style="max-height: 350px; overflow: hidden">
+            @if ($story->image)
+            <div
+                class="d-flex justify-content-center"
+                style="max-height: 400px; overflow: hidden"
+            >
                 <img
-                    src="img/xeesoxee.jpg"
-                    alt="Nama Place"
-                    class="img-fluid"
+                    src="{{ asset('storage/' . $story->image) }}"
+                    class="img-fluid mt-3 mx-auto"
+                    alt="{{ $story->places->name }}"
                 />
             </div>
+            @else
+            <img
+                src="https://source.unsplash.com/600x300?{{ $story->places->city }}"
+                class="d-flex justify-content-center img-fluid mt-3 mx-auto"
+                alt="{{ $story->places->name }}"
+            />
+            @endif
 
-            <article class="my-3 fs-5">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Quibusdam dolor quod, et omnis ratione fugit, recusandae aliquid
-                at asperiores, cum magnam. Nobis, magnam voluptatibus ratione
-                consectetur enim sapiente necessitatibus aliquid sequi. Natus
-                odio culpa provident nobis perferendis quae, aliquid explicabo
-                vero quibusdam tempore error ab ipsam quam repellat molestias?
-                Alias veniam officiis, quisquam eaque atque facilis enim
-                corporis assumenda ratione maxime voluptatibus minus odio
-                debitis inventore reiciendis perferendis tenetur est ut, vitae
-                iste? Beatae laboriosam et nisi. Quod architecto fugiat minus
-                quasi harum nam perspiciatis ex cum fuga. Laboriosam odio
-                necessitatibus sapiente quo dolores quas, eaque voluptatum
-                expedita ut nobis.
-            </article>
+            <article class="fs-6 py-4">{!!$story->body !!}</article>
 
             <a
                 href="/stories"
@@ -68,5 +70,46 @@
         </div>
     </div>
 </div>
+<button
+    type="button"
+    class="
+        mx-5
+        justify-content-end
+        btn btn-secondary
+        fixed-bottom
+        btn-floating btn-lg
+        mx-auto
+    "
+    style="bottom: 5vh; left: 80vw; display: none"
+    id="btn-back-to-top"
+>
+    <i class="bi bi-arrow-up-circle-fill"></i>
+</button>
+<script>
+    //Get the button
+    let mybutton = document.getElementById("btn-back-to-top");
 
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        if (
+            document.body.scrollTop > 300 ||
+            document.documentElement.scrollTop > 300
+        ) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+    // When the user clicks on the button, scroll to the top of the document
+    mybutton.addEventListener("click", backToTop);
+
+    function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
 @endsection
