@@ -47,9 +47,10 @@
         </div>
     </div>
 </div>
+
 <!-- Top Places -->
 <div class="row">
-    <h4>Top Place Visited</h4>
+    <h4 class="mt-4 mb-4">Top Place Visited</h4>
     <div class="col-md-4 col-sm-12 mb-3">
         <div class="card">
             <img
@@ -157,9 +158,10 @@
         </div>
     </div>
 </div>
+
 <!-- Top Country -->
 <div class="row">
-    <h5 class="mt-4 mb-4">Top Country Visited</h5>
+    <h4 class="mt-4 mb-4">Top Country Visited</h4>
 
     <div class="col-md-3 col-sm-12 mb-4">
         <div class="card">
@@ -206,7 +208,10 @@
         </h5>
     </div>
 </div>
-<div class="row mt-5">
+
+<!-- Story -->
+<div class="row">
+    <h4 class="mt-4 mb-4">Top Story Viewed</h4>
     <div class="col-md-4 col-sm-12">
         <div class="card">
             <img
@@ -218,7 +223,7 @@
         </div>
     </div>
     <div class="col-md-8 col-sm-12">
-        <h2 class="mt-3">{{ $stories[1]->title }}</h2>
+        <h2 class="mt-5">{{ $stories[1]->title }}</h2>
         <P>{!! Str::limit($stories[0]->body, 500, "..")!!}</P>
         <br />
         <p>

@@ -46,8 +46,8 @@
                 >
             </h3>
             <p>
-                <small class="text-muted">
-                    By.
+                <small>
+                    <span class="text-muted">By.</span>
                     {{ $stories[0]->author->name }}</small
                 >
                 <small class="text-muted">
@@ -60,8 +60,8 @@
                 >
             </p>
             <p class="card-text">{!! $stories[0]->excerpt !!}</p>
-            <a href="#" class="text-decoration-none btn btn-primary"
-                >Read more</a
+            <a href="/story" class="text-decoration-none btn btn-primary"
+                >Read Story</a
             >
         </div>
     </div>
@@ -104,7 +104,8 @@
                             {{$story->title}}
                         </h5>
                         <small class="card-text mt-1"
-                            >By. {{ $story->author->name }}</small
+                            ><span class="text-muted">By.</span>
+                            {{ $story->author->name }}</small
                         >
 
                         <small class="text-muted">
