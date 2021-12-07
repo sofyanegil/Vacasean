@@ -223,14 +223,16 @@
         </div>
     </div>
     <div class="col-md-8 col-sm-12">
-        <h2 class="mt-5">{{ $stories[1]->title }}</h2>
+        <h2 class="mt-5">{{ $stories[0]->title }}</h2>
         <P>{!! Str::limit($stories[0]->body, 500, "..")!!}</P>
         <br />
         <p>
             {{ $stories[0]->author->name }}. {{ $stories[0]->places->name }},
             {{ $stories[0]->places->city }}
         </p>
-        <button type="button" class="btn btn-primary mt-3">Read Story</button>
+        <a href="/stories/{{ $stories[0]->slug }}" class="btn btn-primary mt-3">
+            <i class="bi bi-newspaper"></i> Read Story
+        </a>
     </div>
 </div>
 @endsection

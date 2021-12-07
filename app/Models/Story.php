@@ -19,6 +19,6 @@ class Story extends Model
 
     public function author()
     {
-        return $this->belongsTo(User::class, 'id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

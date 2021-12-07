@@ -60,8 +60,11 @@
                 >
             </p>
             <p class="card-text">{!! $stories[0]->excerpt !!}</p>
-            <a href="/story" class="text-decoration-none btn btn-primary"
-                >Read Story</a
+            <a
+                href="/stories/{{ $stories[0]->slug }}"
+                class="text-decoration-none btn btn-primary"
+            >
+                <i class="bi bi-newspaper"></i> Read Story</a
             >
         </div>
     </div>
@@ -118,9 +121,12 @@
                         >
                         <p class="card-text mt-3">{!! $story->excerpt !!}</p>
                         <p class="card-text">
-                            <button type="button" class="btn btn-primary">
-                                Read Story
-                            </button>
+                            <a
+                                href="/stories/{{ $story->slug }}"
+                                class="btn btn-primary"
+                            >
+                                <i class="bi bi-newspaper"></i> Read Story
+                            </a>
                         </p>
                     </div>
                 </div>
