@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Places;
 use App\Http\Requests\StorePlacesRequest;
 use App\Http\Requests\UpdatePlacesRequest;
+use App\Models\Story;
 
 class PlacesController extends Controller
 {
@@ -17,7 +18,7 @@ class PlacesController extends Controller
     {
         return view('places', [
             "title" => "Places",
-            "places" => Places::latest()->paginate(7)->onEachSide(0)
+            "places" => Places::latest()->paginate(9)->onEachSide(0)
         ]);
     }
 
@@ -50,7 +51,11 @@ class PlacesController extends Controller
      */
     public function show(Places $places)
     {
-        //
+        return view('place', [
+            "title" => $places->name,
+            "places" => $places,
+            "stories" => Story::all()->where('places_id', $places->id)
+        ]);
     }
 
     /**

@@ -30,6 +30,8 @@ Route::get('/', function () {
 
 Route::get('/places', [PlacesController::class, 'index']);
 
+Route::get('/places/{places:slug}', [PlacesController::class, 'show']);
+
 Route::get('/stories', [StoryController::class, 'index']);
 
 Route::get('/stories/{story:slug}', [StoryController::class, 'show']);
