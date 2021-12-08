@@ -9,7 +9,7 @@
         <img
             src="https://images.unsplash.com/photo-1519544442-93857b48665e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80"
             class="rounded col-sm-12"
-            style="min-width: 40vw; height: 50vh; object-fit: cover"
+            style="max-width: 80vw; height: 50vh; object-fit: cover"
             alt="..."
         />
     </div>
@@ -18,20 +18,14 @@
             Take a rest from your job for travel around and chilling.
         </h2>
         <h6 class="mt-4 col-12 mb-sm-0 mt-sm-1">
-            dolor sit amet consectetur adipisicing elit. Mollitia cum excepturi
-            facilis maiores quis obcaecati magni veniam, laboriosam inventore.
-            Dignissimos modi pariatur illum, ratione blanditiis iure dolorem
-            fuga, vitae natus, fugiat reiciendis doloremque. In recusandae,
-            quibusdam beatae quod totam, libero praesentium harum est nemo rerum
-            voluptatem et modi incidunt, quisquam eligendi illum omnis
-            voluptatum vero assumenda rem aliquam qui? Suscipit debitis neque in
-            id quibusdam sapiente provident dolorem, similique earum accusamus
-            voluptates.
+            Travel around sout east asia with view and best experience. We
+            provide any request you need for enjoy the holiday make your own
+            best experience.
         </h6>
-        <button type="button" class="btn btn-primary mt-5 mb-5">
+        <a href="/places" class="btn btn-primary mt-5 mb-3">
             Explore the Place
-        </button>
-        <div class="row mt-5">
+        </a>
+        <div class="row">
             <div class="col">
                 <i class="bi-globe"></i>
                 <p>10 Countries</p>
@@ -50,7 +44,7 @@
 
 <!-- Top Places -->
 <div class="row">
-    <h4 class="mt-4 mb-4">Top Place Visited</h4>
+    <h4 class="mt-1 mb-4">Top Place Visited</h4>
     <div class="col-md-4 col-sm-12 mb-3">
         <div class="card">
             <img
@@ -65,7 +59,10 @@
                     {{ $places[0]->city }},
                     {{ $places[0]->country->name_country }}
                 </p>
-                <a href="/" class="btn btn-success w-100">
+                <a
+                    href="/places/{{ $places[0]->slug }}"
+                    class="btn btn-success w-100"
+                >
                     <i class="bi-compass"></i> Explore Now!
                 </a>
             </div>
@@ -87,7 +84,10 @@
                             {{ $places[1]->city }},
                             {{ $places[1]->country->name_country }}
                         </p>
-                        <a href="/" class="btn btn-success w-100">
+                        <a
+                            href="/places/{{ $places[1]->slug }}"
+                            class="btn btn-success w-100"
+                        >
                             <i class="bi-compass"></i> Explore Now!
                         </a>
                     </div>
@@ -107,7 +107,10 @@
                             {{ $places[2]->city }},
                             {{ $places[2]->country->name_country }}
                         </p>
-                        <a href="/" class="btn btn-success w-100">
+                        <a
+                            href="/places/{{ $places[2]->slug }}"
+                            class="btn btn-success w-100"
+                        >
                             <i class="bi-compass"></i> Explore Now!
                         </a>
                     </div>
@@ -129,7 +132,10 @@
                             {{ $places[3]->city }},
                             {{ $places[3]->country->name_country }}
                         </p>
-                        <a href="/" class="btn btn-success w-100">
+                        <a
+                            href="/places/{{ $places[3]->slug }}"
+                            class="btn btn-success w-100"
+                        >
                             <i class="bi-compass"></i> Explore Now!
                         </a>
                     </div>
@@ -149,7 +155,10 @@
                             {{ $places[4]->city }},
                             {{ $places[4]->country->name_country }}
                         </p>
-                        <a href="/" class="btn btn-success w-100">
+                        <a
+                            href="/places/{{ $places[4]->slug }}"
+                            class="btn btn-success w-100"
+                        >
                             <i class="bi-compass"></i> Explore Now!
                         </a>
                     </div>

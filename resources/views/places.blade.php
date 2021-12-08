@@ -5,67 +5,6 @@
     <div class="row justify-content-center mb-3">
         <div class="col-md-6 col-sm-12">
             <div class="input-group mb-3">
-                <!-- <div class="btn-group dropstart">
-                    <button
-                        type="button"
-                        class="btn btn-light dropdown-toggle"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                    >
-                        List Country
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a class="dropdown-item" href="#indonesia"
-                                >Indonesia</a
-                            >
-                        </li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li>
-                            <a class="dropdown-item" href="#malaysia"
-                                >Malaysia</a
-                            >
-                        </li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li>
-                            <a class="dropdown-item" href="#singapura"
-                                >Singapura</a
-                            >
-                        </li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li>
-                            <a class="dropdown-item" href="#thailand"
-                                >Thailand</a
-                            >
-                        </li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li>
-                            <a class="dropdown-item" href="#filipina"
-                                >Filipina</a
-                            >
-                        </li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li>
-                            <a class="dropdown-item" href="#vietnam">Vietnam</a>
-                        </li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li>
-                            <a class="dropdown-item" href="#laos">Laos</a>
-                        </li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li>
-                            <a class="dropdown-item" href="#myanmar">Myanmar</a>
-                        </li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li>
-                            <a class="dropdown-item" href="#brunei">Brunei</a>
-                        </li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li>
-                            <a class="dropdown-item" href="#kamboja">Kamboja</a>
-                        </li>
-                    </ul>
-                </div> -->
                 <input
                     type="text"
                     class="form-control"
@@ -77,7 +16,43 @@
             </div>
         </div>
     </div>
-
+    <!-- Hero -->
+    <div class="row">
+        <div class="col-md-12 mb-4 mx-auto text-center">
+            <div class="card shadow">
+                <img
+                    src="https://source.unsplash.com/600x300?{{ $places[0]->name }}"
+                    style="object-fit: cover; max-height: 300px"
+                    class="card-img-top"
+                    alt="{{ $places[0]->name }}"
+                />
+                <div class="card-body bg-light">
+                    <h4 class="card-text">{{ $places[0]->name }}</h4>
+                    <p>
+                        {{ $places[0]->city }},
+                        {{ $places[0]->country->name_country }}
+                        <img
+                            src="https://flagcdn.com/24x18/{{ $places[0]->country->slug }}.png"
+                            srcset="
+                                https://flagcdn.com/48x36/{{ $places[0]->country->slug }}.png 2x,
+                                https://flagcdn.com/72x54/{{ $places[0]->country->slug }}.png 3x
+                            "
+                            width="24"
+                            height="18"
+                            alt="Filipina"
+                        />
+                    </p>
+                    <a
+                        href="/places/{{ $places[0]->slug }}"
+                        class="btn btn-success w-100"
+                    >
+                        <i class="bi-compass"></i> Explore Now!
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Thumbnail -->
     <div class="row mt-4" id="indonesia">
         <!-- <h4 class="mb-3">
             <img
@@ -102,17 +77,9 @@
                 alt="Indonesia"
             />
         </h4> -->
-        @foreach ($places as $place)
+        @foreach ($places->skip(1) as $place)
         <div class="col-md-3 mb-4">
             <div class="card shadow">
-                <div
-                    class="position-absolute px-1 py-1 text-white"
-                    style="background-color: rgba(0, 0, 0, 0.5)"
-                >
-                    <small class="text-warning">{{ $place->bujur }}</small>
-                    <br />
-                    <small class="text-light">{{ $place->lintang }}</small>
-                </div>
                 <img
                     src="https://source.unsplash.com/600x300?{{ $place->name }}"
                     style="object-fit: cover"
@@ -123,8 +90,21 @@
                     <h4 class="card-text">{{ $place->name }}</h4>
                     <p>
                         {{ $place->city }}, {{ $place->country->name_country }}
+                        <img
+                            src="https://flagcdn.com/24x18/{{ $place->country->slug }}.png"
+                            srcset="
+                                https://flagcdn.com/48x36/{{ $place->country->slug }}.png 2x,
+                                https://flagcdn.com/72x54/{{ $place->country->slug }}.png 3x
+                            "
+                            width="24"
+                            height="18"
+                            alt="Filipina"
+                        />
                     </p>
-                    <a href="/" class="btn btn-success w-100">
+                    <a
+                        href="/places/{{ $place->slug }}"
+                        class="btn btn-success w-100"
+                    >
                         <i class="bi-compass"></i> Explore Now!
                     </a>
                 </div>
