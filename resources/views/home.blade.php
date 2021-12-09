@@ -172,50 +172,24 @@
 <div class="row">
     <h4 class="mt-4 mb-4">Top Country Visited</h4>
 
+    @foreach($countries as $country)
     <div class="col-md-3 col-sm-12 mb-4">
-        <div class="card">
-            <img
-                src="https://flagcdn.com/h240/{{ $countries[0]->slug }}.png"
-                class="card-img-top border-dark border-warning"
-            />
-        </div>
-        <h5 class="card-text bg-light text-center bold mt-2">
-            {{ $countries[0]->name_country }}
-        </h5>
+        <a
+            class="text-decoration-none text-dark"
+            href="/countries/{{ $country->slug }}"
+        >
+            <div class="card bg-dark text-white">
+                <img
+                    src="https://flagcdn.com/h240/{{ $country->slug }}.png"
+                    alt="{{ $country->name_country}}"
+                />
+            </div>
+            <h5 class="card-text bg-light text-center bold mt-2">
+                {{ $country->name_country }}
+            </h5>
+        </a>
     </div>
-    <div class="col-md-3 col-sm-12 mb-4">
-        <div class="card">
-            <img
-                src="https://flagcdn.com/h240/{{ $countries[9]->slug }}.png"
-                class="card-img-top border-dark border-warning"
-            />
-        </div>
-        <h5 class="card-text bg-light text-center bold mt-2">
-            {{ $countries[9]->name_country }}
-        </h5>
-    </div>
-    <div class="col-md-3 col-sm-12 mb-4">
-        <div class="card">
-            <img
-                src="https://flagcdn.com/h240/{{ $countries[2]->slug }}.png"
-                class="card-img-top border-dark border-warning"
-            />
-        </div>
-        <h5 class="card-text bg-light text-center bold mt-2">
-            {{ $countries[2]->name_country }}
-        </h5>
-    </div>
-    <div class="col-md-3 col-sm-12 mb-4">
-        <div class="card">
-            <img
-                src="https://flagcdn.com/h240/{{ $countries[3]->slug }}.png"
-                class="card-img-top border-dark border-warning"
-            />
-        </div>
-        <h5 class="card-text bg-light text-center bold mt-2">
-            {{ $countries[3]->name_country }}
-        </h5>
-    </div>
+    @endforeach
 </div>
 
 <!-- Story -->

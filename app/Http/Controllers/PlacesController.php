@@ -17,7 +17,7 @@ class PlacesController extends Controller
     public function index()
     {
         return view('places', [
-            "title" => "Places",
+            "title" => "Asean",
             "places" => Places::latest()->paginate(9)->onEachSide(0)
         ]);
     }

@@ -14,6 +14,6 @@ class StorySeeder extends Seeder
      */
     public function run()
     {
-        Story::factory(20)->create();
+         
     }
 }

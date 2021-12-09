@@ -1,7 +1,7 @@
 @extends('layouts.main') @section('main')
 
 <div class="container">
-    <h1 class="mb-3 text-center">Vacation Places in ASEAN Countries</h1>
+    <h1 class="mb-3 text-center">Vacation Places in {{ $title }}</h1>
     <div class="row justify-content-center mb-3">
         <div class="col-md-6 col-sm-12">
             <div class="input-group mb-3">
@@ -39,7 +39,7 @@
                             "
                             width="24"
                             height="18"
-                            alt="Filipina"
+                            alt="{{ $places[0]->name }}"
                         />
                     </p>
                     <a
@@ -53,7 +53,7 @@
         </div>
     </div>
     <!-- Thumbnail -->
-    <div class="row mt-4" id="indonesia">
+    <div class="row mt-4">
         <!-- <h4 class="mb-3">
             <img
                 src="https://flagcdn.com/24x18/id.png"
