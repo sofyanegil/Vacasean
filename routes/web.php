@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home', [
         'title' => 'Home',
-        'countries' => Country::all(),
+        'countries' => Country::latest()->paginate(4),
         'places' => Places::all(),
         'stories' => Story::all(),
     ]);
@@ -37,6 +37,8 @@ Route::get('/stories', [StoryController::class, 'index']);
 Route::get('/stories/{story:slug}', [StoryController::class, 'show']);
 
 Route::get('/countries', [CountryController::class, 'index']);
+
+Route::get('/countries/{country:slug}', [CountryController::class, 'show']);
 
 Route::get('/about', function () {
     return view('about', [

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Places;
 use App\Models\Country;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCountryRequest;
 use App\Http\Requests\UpdateCountryRequest;
 
@@ -51,6 +53,11 @@ class CountryController extends Controller
     public function show(Country $country)
     {
         //
+        return view('places', [
+            "title" => $country->name_country,
+            "country" => $country,
+            "places" => Places::latest()->where('country_id', $country->id)->paginate(8)
+        ]);
     }
 
     /**
