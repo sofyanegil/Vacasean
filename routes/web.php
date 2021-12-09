@@ -1,12 +1,14 @@
 <?php
 
-use App\Http\Controllers\CountryController;
-use App\Http\Controllers\PlacesController;
-use App\Http\Controllers\StoryController;
-use App\Models\Country;
-use App\Models\Places;
 use App\Models\Story;
+use App\Models\Places;
+use App\Models\Country;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\StoryController;
+use App\Http\Controllers\PlacesController;
+use App\Http\Controllers\CountryController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,14 +48,10 @@ Route::get('/about', function () {
     ]);
 });
 
-Route::get('/login', function () {
-    return view('login/index', [
-        "title" => "Login",
-    ]);
-});
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::get('/register', function () {
-    return view('register/index', [
-        "title" => "Register",
-    ]);
-});
+
+Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
+Route::post('/register', [RegisterController::class, 'store']);
