@@ -1,8 +1,3 @@
-<!-- <style>
-    * {
-        outline: 1px solid red;
-    }
-</style> -->
 @extends('layouts.main') @section('main')
 <div class="row mt-3 p-2">
     <div class="col-md-6 col-sm-12 p-2">
@@ -10,7 +5,6 @@
             src="https://images.unsplash.com/photo-1519544442-93857b48665e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80"
             class="rounded col-sm-12"
             style="max-width: 80vw; height: 50vh; object-fit: cover"
-            alt="..."
         />
     </div>
     <div class="col-md-6 col-sm-12 p-3">
@@ -50,7 +44,6 @@
             <img
                 src="https://images.unsplash.com/photo-1603139790173-71344104bc4d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
                 class="card-img-top"
-                alt="..."
                 style="max-height: 65vh; object-fit: cover"
             />
             <div class="card-body">
@@ -75,7 +68,6 @@
                     <img
                         src="https://images.unsplash.com/photo-1605711217046-d3885ceb5fec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80"
                         class="card-img-top"
-                        alt="..."
                         style="max-height: 20vh; object-fit: cover"
                     />
                     <div class="card-body bg-light col-sm-12">
@@ -98,7 +90,6 @@
                     <img
                         src="https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1101&q=80"
                         class="card-img-top"
-                        alt="..."
                         style="max-height: 20vh; object-fit: cover"
                     />
                     <div class="card-body bg-light col-sm-12">
@@ -123,7 +114,6 @@
                     <img
                         src="https://images.unsplash.com/photo-1510923119584-fc67ed7ff3de?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80"
                         class="card-img-top"
-                        alt="..."
                         style="max-height: 20vh; object-fit: cover"
                     />
                     <div class="card-body bg-light col-sm-12">
@@ -146,7 +136,6 @@
                     <img
                         src="https://images.unsplash.com/photo-1561461343-7c9d7c1dc773?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
                         class="card-img-top"
-                        alt="..."
                         style="max-height: 20vh; object-fit: cover"
                     />
                     <div class="card-body bg-light col-sm-12">
@@ -179,10 +168,7 @@
             href="/countries/{{ $country->slug }}"
         >
             <div class="card bg-dark text-white">
-                <img
-                    src="https://flagcdn.com/h240/{{ $country->slug }}.png"
-                    alt="{{ $country->name_country}}"
-                />
+                <img src="https://flagcdn.com/h240/{{ $country->slug }}.png" />
             </div>
             <h5 class="card-text bg-light text-center bold mt-2">
                 {{ $country->name_country }}
@@ -200,7 +186,6 @@
             <img
                 src="https://images.unsplash.com/photo-1605472074902-fd448c230dd7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
                 class="card-img-top"
-                alt="..."
                 style="max-height: 70vh; object-fit: cover"
             />
         </div>

@@ -17,7 +17,7 @@ class CountryController extends Controller
      */
     public function index()
     {
-        return view('countries', [
+        return view('frontend.countries', [
             "title" => "Country",
             "countries" => Country::all()
         ]);
@@ -53,7 +53,7 @@ class CountryController extends Controller
     public function show(Country $country)
     {
         //
-        return view('places', [
+        return view('frontend.places', [
             "title" => $country->name_country,
             "country" => $country,
             "places" => Places::latest()->where('country_id', $country->id)->paginate(8)

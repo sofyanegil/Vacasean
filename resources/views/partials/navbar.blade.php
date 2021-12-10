@@ -93,10 +93,10 @@
                     </ul>
                 </li>
                 @else
-                <li class="nav-item ms-2">
+                <li class="nav-item ms-2 bg-dark" style="border-radius: 30px">
                     <a
                         href="/login"
-                        class="nav-link {{ Request::is('login') ? 'active' : ''}}"
+                        class=" text-light text-center nav-link {{ Request::is('login') ? 'active' : ''}}"
                     >
                         <i class="bi bi-box-arrow-in-right"></i>
                         Login

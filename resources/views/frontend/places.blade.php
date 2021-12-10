@@ -1,31 +1,51 @@
 @extends('layouts.main') @section('main')
 
-<div class="container">
-    <h1 class="mb-3 text-center">Vacation Places in {{ $title }}</h1>
-    <div class="row justify-content-center mb-3">
-        <div class="col-md-6 col-sm-12">
-            <div class="input-group mb-3">
-                <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Search.."
-                    name="search"
-                    value="{{ request('search') }}"
-                />
-                <button class="btn btn-primary" type="submit">Search</button>
-            </div>
+<h1 class="mb-3 text-center">Vacation Places in {{ $title }}</h1>
+<div class="row justify-content-center mb-3">
+    <div class="col-md-6 col-sm-12">
+        <div class="input-group mb-3">
+            <input
+                type="text"
+                class="form-control"
+                placeholder="Search.."
+                name="search"
+                value="{{ request('search') }}"
+            />
+            <button class="btn btn-primary" type="submit">Search</button>
         </div>
     </div>
+</div>
+<div class="container">
+    @if ($places->count())
     <!-- Hero -->
     <div class="row">
-        <div class="col-md-12 mb-4 mx-auto text-center">
+        <div class="col-md-8 mb-4 mx-auto text-center">
             <div class="card shadow">
+                @if ($places[0]->image)
+                <img
+                    src="{{ asset('storage/' . $places[0]->image) }}"
+                    class="
+                        d-flex
+                        justify-content-center
+                        img-fluid
+                        mx-auto
+                        w-100
+                    "
+                    style="object-fit: cover; max-height: 30vh"
+                />
+                @else
                 <img
                     src="https://source.unsplash.com/600x300?{{ $places[0]->name }}"
-                    style="object-fit: cover; max-height: 300px"
-                    class="card-img-top"
-                    alt="{{ $places[0]->name }}"
+                    class="
+                        d-flex
+                        justify-content-center
+                        img-fluid
+                        mx-auto
+                        w-100
+                    "
+                    style="object-fit: cover; max-height: 30vh"
                 />
+                @endif
                 <div class="card-body bg-light">
                     <h4 class="card-text">{{ $places[0]->name }}</h4>
                     <p>
@@ -39,7 +59,6 @@
                             "
                             width="24"
                             height="18"
-                            alt="{{ $places[0]->name }}"
                         />
                     </p>
                     <a
@@ -54,38 +73,22 @@
     </div>
     <!-- Thumbnail -->
     <div class="row mt-4">
-        <!-- <h4 class="mb-3">
-            <img
-                src="https://flagcdn.com/24x18/id.png"
-                srcset="
-                    https://flagcdn.com/48x36/id.png 2x,
-                    https://flagcdn.com/72x54/id.png 3x
-                "
-                width="24"
-                height="18"
-                alt="Indonesia"
-            />
-            Indonesia
-            <img
-                src="https://flagcdn.com/24x18/id.png"
-                srcset="
-                    https://flagcdn.com/48x36/id.png 2x,
-                    https://flagcdn.com/72x54/id.png 3x
-                "
-                width="24"
-                height="18"
-                alt="Indonesia"
-            />
-        </h4> -->
         @foreach ($places->skip(1) as $place)
         <div class="col-md-3 mb-4">
             <div class="card shadow">
+                @if($place->image)
+                <img
+                    src="{{ asset('storage/' . $place->image) }}"
+                    style="object-fit: cover"
+                    class="card-img-top"
+                />
+                @else
                 <img
                     src="https://source.unsplash.com/600x300?{{ $place->name }}"
                     style="object-fit: cover"
                     class="card-img-top"
-                    alt="{{ $place->name }}"
                 />
+                @endif
                 <div class="card-body bg-light">
                     <h4 class="card-text">{{ $place->name }}</h4>
                     <p>
@@ -98,7 +101,6 @@
                             "
                             width="24"
                             height="18"
-                            alt="Filipina"
                         />
                     </p>
                     <a
@@ -112,6 +114,24 @@
         </div>
         @endforeach
     </div>
+    @else
+    {{-- No Place --}}
+    <div
+        class="
+            alert alert-warning
+            col-sm-6
+            mx-auto
+            align-items-center
+            h-100
+            d-flex
+        "
+        role="alert"
+    >
+        <h1 class="text-center fs-1 flex-fill fs-3 align-self-auto">
+            No Place Found
+        </h1>
+    </div>
+    @endif
 </div>
 <div class="p-5 container d-flex justify-content-center">
     {{ $places->links() }}

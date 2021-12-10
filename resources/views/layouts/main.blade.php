@@ -16,10 +16,6 @@
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css"
         />
-        <script
-            src="https://kit.fontawesome.com/50c83f1bb7.js"
-            crossorigin="anonymous"
-        ></script>
 
         <!-- Custom CSS -->
         <link rel="stylesheet" href="/css/style.css" />
