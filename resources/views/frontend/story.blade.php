@@ -48,7 +48,6 @@
                 <img
                     src="{{ asset('storage/' . $story->image) }}"
                     class="img-fluid mt-3 mx-auto"
-                    alt="{{ $story->places->name }}"
                     style="
                         max-height: 400px;
                         overflow: hidden;
@@ -60,7 +59,6 @@
             <img
                 src="https://source.unsplash.com/600x300?{{ $story->places->city }}"
                 class="d-flex justify-content-center img-fluid mt-3 mx-auto"
-                alt="{{ $story->places->name }}"
                 style="max-height: 400px; overflow: hidden; object-fit: cover"
             />
             @endif

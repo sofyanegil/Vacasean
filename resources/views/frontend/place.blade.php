@@ -1,9 +1,3 @@
-<style>
-    * {
-        /* outline: 1px solid red; */
-    }
-</style>
-
 @extends('layouts.main')
 <link rel="stylesheet" href="/css/mapbox.css" />
 <link
@@ -25,16 +19,19 @@
             <img
                 src="{{ asset('storage/' . $places->image) }}"
                 class="img-fluid mt-3 mx-auto"
-                alt="{{ $story->places->name }}"
             />
         </div>
         @else
-        <img
-            src="https://source.unsplash.com/600x300?{{ $places->city }}"
-            class="d-flex justify-content-center img-fluid mt-3 mx-auto"
-            alt="{{ $places->name }}"
-            style="object-fit: cover"
-        />
+        <div
+            class="d-flex justify-content-center"
+            style="max-height: 400px; overflow: hidden"
+        >
+            <img
+                src="https://source.unsplash.com/600x300?{{ $places->city }}"
+                class="img-fluid mt-3 mx-auto"
+            />
+        </div>
+
         @endif
         <article class="px-md-5 p-3 mt-3">
             <h4 style="font-weight: 600">About the place</h4>
@@ -48,13 +45,11 @@
             >
         </article>
     </div>
-    <div class="col-lg-4 col-sm-12">
+    <div class="col-lg-4 col-sm-12 text-center">
         <div class="div bg-light p-md-1 p-sm-0">
-            <h3 class="text-sm-center text-md-left">Location</h3>
-            <small class="text-center" id="lintang">
-                {{ $places->lintang}} </small
-            >,
-            <small class="text-center" id="bujur">{{ $places->bujur}}</small>
+            <h3>Location</h3>
+            <small id="lintang"> {{ $places->lintang}} </small>,
+            <small id="bujur">{{ $places->bujur}}</small>
             <div
                 id="map"
                 class="mt-2"
@@ -72,21 +67,18 @@
                                         ><img
                                             src="https://flagcdn.com/h40/{{ $story->places->country->slug  }}.png"
                                             height="30"
-                                            alt="{{ $story->places->country->name_country  }}"
                                     /></small>
                                 </div>
                                 @if ($story->image)
                                 <img
                                     src="{{ asset('storage/' . $story->image) }}"
-                                    alt="{{ $story->places->name }}"
-                                    class="card-img-top"
+                                    class="card-img-top h-100 w-100"
                                     style="object-fit: cover"
                                 />
                                 @else
                                 <img
-                                    src="https://source.unsplash.com/300x150?{{ $story->places->name }}"
-                                    class="card-img-top h-100"
-                                    alt="{{ $story->places->name }}"
+                                    src="https://source.unsplash.com/600x300?{{ $story->places->name }}"
+                                    class="card-img-top h-100 w-100"
                                     style="object-fit: cover"
                                 />
                                 @endif
@@ -171,7 +163,6 @@
         </div>
     </div>
 </div>
-
 <!-- Jquery -->
 <script
     src="https://code.jquery.com/jquery-3.6.0.js"
@@ -181,3 +172,4 @@
 <!-- Mapbox -->
 <script src="https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js"></script>
 <script src="/js/mapbox.js"></script>
+@endsection

@@ -16,7 +16,7 @@ class PlacesController extends Controller
      */
     public function index()
     {
-        return view('places', [
+        return view('frontend.places', [
             "title" => "Asean",
             "places" => Places::latest()->paginate(9)->onEachSide(0)
         ]);
@@ -51,10 +51,10 @@ class PlacesController extends Controller
      */
     public function show(Places $places)
     {
-        return view('place', [
+        return view('frontend.place', [
             "title" => $places->name,
             "places" => $places,
-            "stories" => Story::all()->where('places_id', $places->id)
+            "stories" => Story::latest()->where('places_id', $places->id)->paginate(2)
         ]);
     }
 

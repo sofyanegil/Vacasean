@@ -13,7 +13,6 @@
                     <img
                         src="https://flagcdn.com/h240/{{ $country->slug }}.png"
                         height="240"
-                        alt="{{ $country->name_country}}"
                     />
                 </div>
                 <h5 class="card-text bg-light text-center bold mt-2">

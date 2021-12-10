@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminDashboardController;
 use App\Models\Story;
 use App\Models\Places;
 use App\Models\Country;
@@ -8,8 +10,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\StoryController;
 use App\Http\Controllers\PlacesController;
 use App\Http\Controllers\CountryController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,9 +25,9 @@ use App\Http\Controllers\RegisterController;
 */
 
 Route::get('/', function () {
-    return view('home', [
+    return view('frontend.home', [
         'title' => 'Home',
-        'countries' => Country::latest()->paginate(4),
+        'countries' => Country::first()->paginate(4),
         'places' => Places::all(),
         'stories' => Story::all(),
     ]);
@@ -44,7 +46,7 @@ Route::get('/countries', [CountryController::class, 'index']);
 Route::get('/countries/{country:slug}', [CountryController::class, 'show']);
 
 Route::get('/about', function () {
-    return view('about', [
+    return view('frontend.about', [
         "title" => "About",
     ]);
 });
@@ -57,4 +59,16 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+Route::get('/dashboard', function () {
+    return view('dashboard.index', [
+        "places" => Places::latest()->paginate(4)
+    ]);
+})->middleware('auth');
+
+Route::get('/dashboard/stories/checkSlug', [
+    DashboardController::class,
+    'checkSlug'
+])->middleware('auth');
+
+Route::resource('/dashboard/stories', DashboardController::class)->middleware('auth');
+Route::resource('/dashboard/places', AdminDashboardController::class)->middleware('admin');

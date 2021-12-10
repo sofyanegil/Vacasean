@@ -1,23 +1,25 @@
 @extends('layouts.main') @section('main')
-<div class="row mt-3 p-2">
-    <h1 class="mb-3 text-center">All Stories</h1>
-    <!-- Search -->
-    <div class="row justify-content-center mb-3">
-        <div class="col-md-6 col-sm-12">
-            <div class="input-group mb-3">
-                <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Search.."
-                    name="search"
-                    value="{{ request('search') }}"
-                />
-                <button class="btn btn-primary" type="submit">Search</button>
-            </div>
+<h1 class="mb-3 text-center">All Stories</h1>
+<!-- Search -->
+<div class="row justify-content-center mb-3">
+    <div class="col-md-6 col-sm-12">
+        <div class="input-group mb-3">
+            <input
+                type="text"
+                class="form-control"
+                placeholder="Search.."
+                name="search"
+                value="{{ request('search') }}"
+            />
+            <button class="btn btn-primary" type="submit">Search</button>
         </div>
     </div>
+</div>
+
+@if ($stories->count())
+<div class="row mt-3 p-2">
     <!-- Hero -->
-    <div class="card mb-3">
+    <div class="card mb-3 col-md-8 col-sm-12 mx-auto">
         @if ($stories[0]->image)
         <div
             class="d-flex justify-content-center"
@@ -25,16 +27,20 @@
         >
             <img
                 src="{{ asset('storage/' . $stories[0]->image) }}"
-                class="img-fluid"
-                alt="..."
+                class="img-fluid w-100"
             />
         </div>
         @else
-        <img
-            src="https://source.unsplash.com/800x200?{{ $stories[0]->places->name }}"
-            class="img-fluid"
-            alt="{{ $stories[0]->places->name }}"
-        />
+        <div
+            class="d-flex justify-content-center"
+            style="max-height: 400px; overflow: hidden"
+        >
+            <img
+                src="https://source.unsplash.com/800x200?{{ $stories[0]->places->name }}"
+                class="img-fluid w-100"
+            />
+        </div>
+
         @endif
 
         <div class="card-body text-center">
@@ -82,21 +88,18 @@
                             ><img
                                 src="https://flagcdn.com/h40/{{ $story->places->country->slug  }}.png"
                                 height="30"
-                                alt="{{ $story->places->country->name_country  }}"
                         /></small>
                     </div>
                     @if ($story->image)
                     <img
                         src="{{ asset('storage/' . $story->image) }}"
-                        alt="{{ $story->places->name }}"
-                        class="card-img-top"
+                        class="card-img-top h-100 w-100"
                         style="object-fit: cover"
                     />
                     @else
                     <img
                         src="https://source.unsplash.com/600x300?{{ $story->places->name }}"
-                        class="card-img-top h-100"
-                        alt="{{ $story->places->name }}"
+                        class="card-img-top h-100 w-100"
                         style="object-fit: cover"
                     />
                     @endif
@@ -135,6 +138,17 @@
     </div>
     @endforeach
 </div>
+@else
+{{-- No Stories --}}
+<div
+    class="alert alert-warning col-sm-6 mx-auto align-items-center h-100 d-flex"
+    role="alert"
+>
+    <h1 class="text-center fs-1 flex-fill fs-3 align-self-auto">
+        No Stories Found
+    </h1>
+</div>
+@endif
 <div class="p-5 container d-flex justify-content-center">
     {{ $stories->links() }}
 </div>

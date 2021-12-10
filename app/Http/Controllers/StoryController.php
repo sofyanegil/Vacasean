@@ -15,7 +15,7 @@ class StoryController extends Controller
      */
     public function index()
     {
-        return view('stories', [
+        return view('frontend.stories', [
             "title" => "Stories",
             "stories" => Story::latest()->paginate(7)->onEachSide(0)
         ]);
@@ -50,7 +50,7 @@ class StoryController extends Controller
      */
     public function show(Story $story)
     {
-        return view('story', [
+        return view('frontend.story', [
             "title" => $story->title,
             "story" => $story
         ]);
