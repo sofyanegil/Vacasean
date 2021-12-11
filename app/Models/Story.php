@@ -10,6 +10,20 @@ use Cviebrock\EloquentSluggable\Sluggable;
 
 class Story extends Model
 {
+
+ public function scopeFilter($query, array $filters)
+    {
+
+        $query->when($filters['search'] ?? false, function ($query, $search) {
+            return $query->where(function ($query) use ($search) {
+                $query->where('title', 'like', '%' . $search . '%')
+                    ->orWhere('body', 'like', '%' . $search . '%');
+            });
+        });
+
+    }
+
+
     use HasFactory, Sluggable;
     protected $guarded = ['id'];
     protected $with = ['places', 'author'];

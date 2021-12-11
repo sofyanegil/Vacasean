@@ -21,7 +21,7 @@ class AdminDashboardController extends Controller
     public function index()
     {
         return view('dashboard.places.index', [
-            'places' => Places::latest()->paginate(4)
+            'places' => Places::latest()->filter(request(['search']))->paginate(4)->onEachSide(0)->withQueryString()
         ]);
     }
 

@@ -14,7 +14,7 @@
                     </li>
                     <li class="breadcrumb-item">
                         <a
-                            href=""
+                            href="/places/{{ $story->places->slug }}"
                             class="text-decoration-none text-dark"
                             >{{ $story->places->name }}</a
                         >

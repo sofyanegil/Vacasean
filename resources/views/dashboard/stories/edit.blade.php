@@ -116,7 +116,7 @@
             <trix-editor input="body"></trix-editor>
         </div>
         <button type="submit" class="btn btn-primary d-block mx-auto">
-            <span data-feather="save"></span> Update Post
+            <span data-feather="edit-3"></span> Update Story
         </button>
     </form>
 </div>

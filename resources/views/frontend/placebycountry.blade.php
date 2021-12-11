@@ -1,23 +1,26 @@
 @extends('layouts.main') @section('main')
 
-<h1 class="mb-3 text-center">Vacation Places in {{ $title }}</h1>
-<div class="row justify-content-center mb-4">
-    <div class="col-md-6">
-        <form action="/places">
-            <div class="input-group mb-3">
-                <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Search.."
-                    name="search"
-                />
-                <button class="btn btn-outline-dark" type="submit">
-                    Search
-                </button>
-            </div>
-        </form>
-    </div>
-</div>
+<h1 class="mb-3 text-center">
+    <img
+        src="https://flagcdn.com/24x18/{{ $country->slug }}.png"
+        srcset="
+                                https://flagcdn.com/48x36/{{ $country->slug }}.png 2x,
+                                https://flagcdn.com/72x54/{{ $country->slug }}.png 3x
+                            "
+        width="24"
+        height="18"
+    />
+    {{ $title }}
+    <img
+        src="https://flagcdn.com/24x18/{{ $country->slug }}.png"
+        srcset="
+                                https://flagcdn.com/48x36/{{ $country->slug }}.png 2x,
+                                https://flagcdn.com/72x54/{{ $country->slug }}.png 3x
+                            "
+        width="24"
+        height="18"
+    />
+</h1>
 <div class="container">
     @if ($places->count())
     <!-- Hero -->

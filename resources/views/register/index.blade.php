@@ -104,9 +104,7 @@
                         required
                     />
                     <label for="password">Password</label>
-                    @error('password')
-                    <div class="invalid-feedback">
-                        {{ $message }}
+                    @error('password')----
                     </div>
                     @enderror
                 </div>

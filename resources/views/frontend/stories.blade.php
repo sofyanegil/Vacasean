@@ -2,17 +2,20 @@
 <h1 class="mb-3 text-center">All Stories</h1>
 <!-- Search -->
 <div class="row justify-content-center mb-3">
-    <div class="col-md-6 col-sm-12">
-        <div class="input-group mb-3">
-            <input
-                type="text"
-                class="form-control"
-                placeholder="Search.."
-                name="search"
-                value="{{ request('search') }}"
-            />
-            <button class="btn btn-primary" type="submit">Search</button>
-        </div>
+    <div class="col-md-6">
+        <form action="/stories">
+            <div class="input-group mb-3">
+                <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Search.."
+                    name="search"
+                />
+                <button class="btn btn-outline-dark" type="submit">
+                    Search
+                </button>
+            </div>
+        </form>
     </div>
 </div>
 

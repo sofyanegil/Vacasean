@@ -17,7 +17,7 @@ class StoryController extends Controller
     {
         return view('frontend.stories', [
             "title" => "Stories",
-            "stories" => Story::latest()->paginate(7)->onEachSide(0)
+            "stories" => Story::inRandomOrder()->filter(request(['search']))->paginate(7)->onEachSide(0)->withQueryString()
         ]);
     }
 

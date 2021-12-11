@@ -55,6 +55,7 @@
                 class="mt-2"
                 style="width: 350px; height: 300px"
             ></div>
+            @if($stories->count())
             <h4 class="mt-5">Read Their Story about this place</h4>
             @foreach ($stories as $story)
             <div class="row">
@@ -118,6 +119,10 @@
                 </div>
             </div>
             @endforeach
+            <div class="p-5 container d-flex justify-content-center">
+                {{ $stories->links() }}
+            </div>
+            @endif
             <button
                 type="button"
                 class="

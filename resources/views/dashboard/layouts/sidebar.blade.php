@@ -23,7 +23,7 @@
          }}"
                     href="/dashboard/stories"
                 >
-                    <span data-feather="file-text"></span>
+                    <span data-feather="book-open"></span>
                     My Stories
                 </a>
             </li>
@@ -69,7 +69,7 @@
                      }}"
                     href="/dashboard/places"
                 >
-                    <span data-feather="grid"></span>Places</a
+                    <span data-feather="map"></span>Places</a
                 >
             </li>
         </ul>

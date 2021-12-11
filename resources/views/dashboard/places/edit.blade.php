@@ -171,7 +171,7 @@
             <trix-editor input="about"></trix-editor>
         </div>
         <button type="submit" class="btn btn-primary d-block mx-auto">
-            <span data-feather="plus-circle"></span> Create Place
+            <span data-feather="edit-2"></span> Update Place
         </button>
     </form>
 </div>
