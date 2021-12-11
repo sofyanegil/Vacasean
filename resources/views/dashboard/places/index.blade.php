@@ -40,9 +40,27 @@
             aria-label="Close"
         ></button>
     </div>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <form action="/dashboard/places">
+                <div class="input-group mb-3">
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Search.."
+                        name="search"
+                    />
+                    <button class="btn btn-outline-dark" type="submit">
+                        Search
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
     <a href="/dashboard/places/create" class="btn btn-success my-3">
         <span data-feather="plus-circle"></span> Add new place</a
     >
+    @if ($places->count())
     <div class="row mt-4">
         @foreach ($places as $place)
         <div class="col-md-3 mb-4">
@@ -102,7 +120,24 @@
                 </div>
             </div>
         </div>
-        @endforeach
+        @endforeach @else
+        {{-- No Place --}}
+        <div
+            class="
+                alert alert-warning
+                col-sm-6
+                mx-auto
+                align-items-center
+                h-100
+                d-flex
+            "
+            role="alert"
+        >
+            <h1 class="text-center fs-1 flex-fill fs-3 align-self-auto">
+                No Place Found
+            </h1>
+        </div>
+        @endif
         <div class="p-5 container d-flex justify-content-center">
             {{ $places->links() }}
         </div>

@@ -28,8 +28,8 @@ Route::get('/', function () {
     return view('frontend.home', [
         'title' => 'Home',
         'countries' => Country::first()->paginate(4),
-        'places' => Places::all(),
-        'stories' => Story::all(),
+        'places' => Places::inRandomOrder()->paginate(6),
+        'stories' => Story::inRandomOrder()->paginate(1),
     ]);
 });
 

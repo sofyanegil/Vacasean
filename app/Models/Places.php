@@ -16,6 +16,18 @@ class Places extends Model
     protected $guarded = ['id'];
     protected $with = ['country', 'author'];
 
+ public function scopeFilter($query, array $filters)
+    {
+
+        $query->when($filters['search'] ?? false, function ($query, $search) {
+            return $query->where(function ($query) use ($search) {
+                $query->where('name', 'like', '%' . $search . '%')
+                    ->orWhere('city', 'like', '%' . $search . '%')->orWhere('about', 'like', '%' . $search . '%');
+            });
+        });
+
+    }
+
     public function country()
     {
         return $this->belongsTo(Country::class);

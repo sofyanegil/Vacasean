@@ -53,10 +53,10 @@ class CountryController extends Controller
     public function show(Country $country)
     {
         //
-        return view('frontend.places', [
+        return view('frontend.placebycountry', [
             "title" => $country->name_country,
             "country" => $country,
-            "places" => Places::latest()->where('country_id', $country->id)->paginate(8)
+            "places" => Places::inRandomOrder()->where('country_id', $country->id)->paginate(8)
         ]);
     }
 

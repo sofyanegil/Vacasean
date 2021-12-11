@@ -2,7 +2,7 @@
 
 <div class="container">
     <div class="row mt-3">
-        <h1 class="mb-3">ASEAN Countries</h1>
+        <h1 class="mb-5 text-center">ASEAN Countries</h1>
         @foreach($countries as $country)
         <div class="col-md-4 mb-4">
             <a
