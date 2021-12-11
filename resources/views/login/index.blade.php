@@ -23,6 +23,14 @@
 </style>
 
 <div class="row justify-content-center">
+    <div class="col-md-4 mt-5">
+        <img
+            src="img/3d-login-1.png"
+            width="350"
+            alt=""
+            class="d-none d-md-block"
+        />
+    </div>
     <div class="col-md-4">
         @if(session()->has('success'))
         <div
@@ -99,6 +107,14 @@
                 >Not Registered? <a href="/register">Register Now!</a></small
             >
         </main>
+    </div>
+    <div class="col-md-4">
+        <img
+            src="img/3d-login-2.png"
+            width="400"
+            alt=""
+            class="d-none d-md-block"
+        />
     </div>
 </div>
 @endsection

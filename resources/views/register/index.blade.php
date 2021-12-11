@@ -12,9 +12,18 @@
 </style>
 
 <div class="row justify-content-center mt-4" style="min-height: 68vh">
+    <div class="col-lg-4 mt-sm-5">
+        <img
+            src="img/3d-register-1.png"
+            width="350"
+            alt=""
+            class="d-none d-md-block"
+        />
+    </div>
     <div class="col-lg-5">
         <main class="form-registration">
             <h1 class="h3 mb-3 fw-normal text-center">Register Account</h1>
+            <img src="" alt="" />
             <form action="/register" method="POST">
                 @csrf
                 <div class="form-floating">
@@ -109,6 +118,14 @@
                 </small>
             </form>
         </main>
+    </div>
+    <div class="col-lg-3 mt-sm-5">
+        <img
+            src="img/3d-register-2.png"
+            width="380"
+            alt=""
+            class="d-none d-md-block"
+        />
     </div>
 </div>
 @endsection
