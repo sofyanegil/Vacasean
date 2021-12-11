@@ -1,57 +1,3 @@
-<!-- <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    .about-section {
-        background: url(img/rajaampat.jpg) no-repeat left;
-        background-size: 55%;
-        background-color: #fdfdfd;
-        overflow: hidden;
-        padding: 100px 0;
-    }
-
-    .inner-container {
-        width: 55%;
-        float: right;
-        background-color: #fdfdfd;
-        padding: 100px;
-    }
-
-    .inner-container h1 {
-        text-align: justify;
-    }
-
-    .inner-container h5 {
-        font-size: 20px;
-    }
-
-    .text {
-        text-align: justify;
-        font-size: 13px;
-    }
-
-    @media screen and (max-width: 1200px) {
-        .about-section {
-            background-size: 100%;
-            padding: 50px 40px;
-            margin-top: 50px;
-            margin-bottom: 50px;
-        }
-        .inner-container {
-            padding: 10px;
-            width: 100%;
-            font-size: 10px;
-        }
-    }
-</style> -->
-<!-- <style>
-    * {
-        outline: 1px solid red;
-    }
-</style> -->
 @extends('layouts.main') @section('main')
 <div class="row p-3">
     <div class="col-md-7 col-sm-12">
@@ -327,26 +273,27 @@
         ></iframe>
     </div>
     <div class="col-md-5">
-        <form>
+        <form action="https://formsubmit.co/gdriveegi@gmail.com" method="POST">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Name</label>
-                <input type="text" class="form-control" id="exampleInputText" />
+                <input type="text" name="name" class="form-control" id="exampleInputText" />
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label"
                     >Email Address</label
                 >
-                <input type="text" class="form-control" id="exampleInputText" />
+                <input type="email" name="email" class="form-control" id="exampleInputText" />
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label"
                     >Telephone</label
                 >
-                <input type="text" class="form-control" id="exampleInputText" />
+                <input type="tel" name="telephone" class="form-control" id="exampleInputText" />
             </div>
             <label for="exampleInputEmail1" class="form-label">Message</label>
             <div class="form-floating">
                 <textarea
+                name="message"
                     class="form-control"
                     placeholder="Leave a comment here"
                     id="floatingTextarea2"
