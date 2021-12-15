@@ -82,13 +82,13 @@
                 @if($place->image)
                 <img
                     src="{{ asset('storage/' . $place->image) }}"
-                    style="object-fit: cover"
+                    style="object-fit: cover; height: 20vh"
                     class="card-img-top"
                 />
                 @else
                 <img
                     src="https://source.unsplash.com/600x300?{{ $place->name }}"
-                    style="object-fit: cover"
+                    style="object-fit: cover; height: 20vh"
                     class="card-img-top"
                 />
                 @endif

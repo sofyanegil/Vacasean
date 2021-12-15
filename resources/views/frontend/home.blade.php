@@ -2,7 +2,7 @@
 <div class="row mt-3 p-2">
     <div class="col-md-6 col-sm-12 p-2">
         <img
-            src="https://images.unsplash.com/photo-1519544442-93857b48665e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80"
+            src="https://source.unsplash.com/600x300?Merapi"
             class="rounded col-sm-12 img-fluid"
             style="object-fit: cover"
         />
@@ -45,13 +45,13 @@
             @if($place->image)
             <img
                 src="{{ asset('storage/' . $place->image) }}"
-                style="object-fit: cover"
+                style="object-fit: cover; height: 20vh"
                 class="card-img-top"
             />
             @else
             <img
                 src="https://source.unsplash.com/600x300?{{ $place->name }}"
-                style="object-fit: cover"
+                style="object-fit: cover; height: 20vh"
                 class="card-img-top"
             />
             @endif

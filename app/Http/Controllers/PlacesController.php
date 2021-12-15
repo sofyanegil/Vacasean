@@ -18,7 +18,7 @@ class PlacesController extends Controller
     {
         return view('frontend.places', [
             "title" => "Asean",
-            "places" => Places::inRandomOrder()->filter(request(['search']))->paginate(9)->onEachSide(0)->withQueryString()
+            "places" => Places::orderBy('name', 'ASC')->filter(request(['search']))->paginate(9)->onEachSide(0)->withQueryString()
         ]);
     }
 
