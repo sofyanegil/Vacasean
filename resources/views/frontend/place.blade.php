@@ -50,11 +50,7 @@
             <h3>Location</h3>
             <small id="lintang"> {{ $places->lintang}} </small>,
             <small id="bujur">{{ $places->bujur}}</small>
-            <div
-                id="map"
-                class="mt-2"
-                style="width: 350px; height: 300px"
-            ></div>
+            <div id="map" class="mt-2" style="width: 100%; height: 300px"></div>
             @if($stories->count())
             <h4 class="mt-5">Read Their Story about this place</h4>
             @foreach ($stories as $story)
@@ -125,14 +121,7 @@
             @endif
             <button
                 type="button"
-                class="
-                    mx-5
-                    justify-content-end
-                    btn btn-dark
-                    fixed-bottom
-                    btn-floating btn-lg
-                    mx-auto
-                "
+                class="mx-5 justify-content-end btn btn-dark fixed-bottom btn-floating btn-lg"
                 style="bottom: 5vh; left: 80vw; display: none"
                 id="btn-back-to-top"
             >
